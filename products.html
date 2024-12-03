@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our selection of long-lasting car fresheners.">
+    <title>Shop Freshies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="HL Freshies Logo" class="logo">
+        <h1>Shop Freshies</h1>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+    </header>
+    <div id="notification" style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        display: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    ">Item added to cart!</div>
+    <main id="productList"></main>
+    <footer>
+        <p>&copy; 2024 HL Freshies. All Rights Reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "Lavender Breeze",
+                description: "A calming scent for your ride.",
+                price: 10,
+                image: "placeholder.jpg"
+            },
+            {
+                id: 2,
+                name: "Ocean Mist",
+                description: "Feel the freshness of the ocean.",
+                price: 10,
+                image: "placeholder.jpg"
+            }
+        ];
+
+        const productList = document.getElementById('productList');
+
+        products.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.className = "product";
+            productDiv.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <p><strong>${product.name}</strong></p>
+                <p>${product.description}</p>
+                <p>$${product.price}</p>
+                <button onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</button>
+            `;
+            productList.appendChild(productDiv);
+        });
+    </script>
+<div id="cartPanel" class="cart-panel">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button onclick="toggleCartPanel()">Close</button>
+    </div>
+    <ul id="cartPanelItems"></ul>
+    <p>Total: $<span id="cartPanelTotal">0.00</span></p>
+    <button onclick="location.href='checkout.html'">Checkout</button>
+</div>
+
+
+<div id="cartToggle" class="cart-toggle" onclick="toggleCartPanel()">🛒</div>
+
+</body>
+</html>

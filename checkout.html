@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="HL Freshies Logo" class="logo">
+        <h1>Checkout</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Order Summary</h2>
+            <ul id="checkoutItems"></ul>
+            <p>Total: $<span id="checkoutTotal">0.00</span></p>
+        </section>
+        <form id="checkoutForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+            <button type="submit">Place Order</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 HL Freshies. All Rights Reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        populateCheckoutSummary();
+        document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your order!');
+            localStorage.removeItem('cart');
+            location.href = 'index.html';
+        });
+    </script>
+<div id="cartPanel" class="cart-panel">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button onclick="toggleCartPanel()">Close</button>
+    </div>
+    <ul id="cartPanelItems"></ul>
+    <p>Total: $<span id="cartPanelTotal">0.00</span></p>
+    <button onclick="location.href='checkout.html'">Checkout</button>
+</div>
+
+
+<div id="cartToggle" class="cart-toggle" onclick="toggleCartPanel()">🛒</div>
+
+</body>
+</html>

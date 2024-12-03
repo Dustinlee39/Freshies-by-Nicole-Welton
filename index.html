@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Freshen up your ride with long-lasting car fresheners.">
+    <title>HL Freshies - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.jpg">
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="HL Freshies Logo" class="logo">
+        <h1>Freshies</h1>
+        <p>Freshen Up Your Ride – Long-lasting Car Fresheners</p>
+        <button onclick="location.href='products.html'" class="cta-btn">Shop Now</button>
+    </header>
+    <div id="notification" style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        display: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    ">Item added to cart!</div>
+    <footer>
+        <p>&copy; 2024 HL Freshies. All Rights Reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+<div id="cartPanel" class="cart-panel">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button onclick="toggleCartPanel()">Close</button>
+    </div>
+    <ul id="cartPanelItems"></ul>
+    <p>Total: $<span id="cartPanelTotal">0.00</span></p>
+    <button onclick="location.href='checkout.html'">Checkout</button>
+</div>
+
+
+<div id="cartToggle" class="cart-toggle" onclick="toggleCartPanel()">🛒</div>
+
+</body>
+</html>

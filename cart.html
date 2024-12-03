@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="HL Freshies Logo" class="logo">
+        <h1>Your Cart</h1>
+    </header>
+    <main>
+        <ul id="cartItems"></ul>
+        <p>Total: $<span id="totalPrice">0.00</span></p>
+        <button onclick="location.href='checkout.html'">Proceed to Checkout</button>
+        <button onclick="location.href='products.html'">Back to Products</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 HL Freshies. All Rights Reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>loadCart();</script>
+<div id="cartPanel" class="cart-panel">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button onclick="toggleCartPanel()">Close</button>
+    </div>
+    <ul id="cartPanelItems"></ul>
+    <p>Total: $<span id="cartPanelTotal">0.00</span></p>
+    <button onclick="location.href='checkout.html'">Checkout</button>
+</div>
+
+
+<div id="cartToggle" class="cart-toggle" onclick="toggleCartPanel()">🛒</div>
+
+</body>
+</html>
